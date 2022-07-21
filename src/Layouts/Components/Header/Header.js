@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BtnSearch } from '~/Components/Icons';
 import { BsCart4 } from 'react-icons/bs';
@@ -6,6 +7,8 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import Config from '~/Config';
 import Button from '~/Components/Button';
+import Search from '~/Pages/Search';
+import Dialog from '~/Components/Dialog';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS_HEADER = [
@@ -48,12 +51,16 @@ const MENU_ITEMS_HEADER = [
 ];
 
 function Header() {
+    const [searchModal, setSearchModal] = useState(false);
     const _handleMenuItemsHeader = () => {
         return MENU_ITEMS_HEADER.map((item, index) => (
             <Button menu_item_header key={index} to={item.to}>
                 {item.title}
             </Button>
         ));
+    };
+    const _handleSearch = () => {
+        setSearchModal(!searchModal);
     };
     return (
         <div className={cx('wrapper')}>
@@ -67,13 +74,14 @@ function Header() {
                     </Link>
                 </div>
                 <div className={cx('menu-item-header')}>{_handleMenuItemsHeader()}</div>
-                <div className={cx('search-btn')}>
+                <div className={cx('search-btn')} onClick={_handleSearch}>
                     <BtnSearch />
                 </div>
                 <div className={cx('menu-cart')}>
                     <div className={cx('oder-number')}>0</div>
                     <BsCart4 />
                 </div>
+                {searchModal && <Dialog dialogsearch children={<Search />} />}
             </div>
         </div>
     );
