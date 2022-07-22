@@ -81,7 +81,7 @@ function Header() {
                     <div className={cx('oder-number')}>0</div>
                     <BsCart4 />
                 </div>
-                {searchModal && <Dialog dialogsearch children={<Search />} />}
+                {searchModal && <Dialog dialogsearch children={<Search onClick={_handleSearch} />} />}
             </div>
         </div>
     );

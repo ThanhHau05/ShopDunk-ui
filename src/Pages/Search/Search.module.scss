@@ -1,23 +1,111 @@
 .wrapper {
     background-color: #333;
     text-align: center;
-    background-image: linear-gradient(180deg, #1D1D1F 63px, #1D1D1FC4 0%);
+    background-image: linear-gradient(180deg, #1d1d1f 63px, #1d1d1fc4 0%);
     height: 64px;
+    animation-delay: 0.2s;
+    animation-name: specialFadeInRight;
+    animation-duration: 0.5s;
 }
 
 .search-btn {
     position: absolute;
     background-color: transparent;
     border: 0;
+    top: 24px;
+    margin-left: 8px;
 }
 
 .search {
-    position: relative;
-    background-color: #1d1d1f;
     color: #fff;
+    background-color: #1d1d1f;
     margin-top: 9px;
     width: 569px;
     height: 55px;
     border: 0;
+    outline: none;
     padding: 9px 15px 9px 35px;
+    font-weight: 500;
+    &::selection {
+        background-color: #333;
+    }
+    &::placeholder {
+        color: #fff;
+    }
+}
+
+.close-btn {
+    background-color: transparent;
+    border: 0;
+    color: #86868b;
+    font-size: 19px;
+    position: absolute;
+    display: inline;
+    top: 25.5px;
+    right: 32.8%;
+    cursor: pointer;
+}
+
+.access {
+    color: #86868b;
+    display: flex;
+    width: 569px;
+    height: 35px;
+    margin: 0px auto;
+    align-items: center;
+    font-size: 13px;
+    padding: 10px 34px 0;
+    line-height: 25px;
+    background-color: #fff;
+}
+
+.access-h4 {
+    font-weight: 100;
+}
+
+.list-item-container {
+    display: flex;
+    width: 569px;
+    max-height: 185px;
+    margin: 0px auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 35px 25px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+.search-loading-message {
+    position: absolute;
+    top: 80%;
+}
+
+.search-message-btn {
+    padding: 54px 34px 34px 0;
+}
+
+.search-message {
+    font-size: 12px;
+}
+
+.loading-btn {
+    display: flex;
+    width: 499px;
+    margin: 0 auto;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    animation: loading infinite 1.5s linear;
+    margin-top: 10px;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

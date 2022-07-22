@@ -4,11 +4,34 @@
 }
 
 .menu_item_header {
-    color: #D2D2D7;
+    color: #d2d2d7;
     padding: 22px 25px;
     transition: background-color 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     &:hover {
         background-color: #3f3f3f;
         color: #fff;
     }
+}
+
+.list_item_search {
+    font-size: 15px;
+    padding-bottom: 10px;
+    background-color: transparent;
+    border: 0;
+    color: #515154;
+    cursor: pointer;
+    display: flex;
+    width: 499px;
+    justify-content: flex-start;
+    margin-top: 10px;
+    &:hover {
+        color: #0066cc;
+    }
+}
+
+.line {
+    color: #ebebeb;
+    border-top-style: solid;
+    border-top-width: 1px;
+    width: 499px;
 }

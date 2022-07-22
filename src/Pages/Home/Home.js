@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 function Home() {
-    return <h2 className={cx('')}>Home Page</h2>;
+    return <h2 className={cx('home')}>Home Page</h2>;
 }
 
 export default Home;

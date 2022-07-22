@@ -3,7 +3,17 @@ import styles from './Button.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
-function Button({ to, href, menu_item_header = false, children, onClick, ...passProps }) {
+function Button({
+    to,
+    href,
+    menu_item_header = false,
+    list_item_search = false,
+    leftline,
+    rightline,
+    children,
+    onClick,
+    ...passProps
+}) {
     let Comp = 'button';
     const props = {
         onClick,
@@ -18,11 +28,16 @@ function Button({ to, href, menu_item_header = false, children, onClick, ...pass
     }
     const classes = cx('wrapper', {
         menu_item_header,
+        list_item_search,
     });
     return (
-        <Comp className={classes} {...props}>
-            <span className={cx('title')}>{children}</span>
-        </Comp>
+        <>
+            <>{leftline && <span className={cx('line')}></span>}</>
+            <Comp className={classes} {...props}>
+                <span className={cx('title')}>{children}</span>
+            </Comp>
+            <>{rightline && Comp !== 'button' && <span className={cx('line')}></span>}</>
+        </>
     );
 }
 
