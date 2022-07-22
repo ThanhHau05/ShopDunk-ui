@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BtnSearch } from '~/Components/Icons';
 import { BsCart4 } from 'react-icons/bs';
@@ -50,6 +50,24 @@ const MENU_ITEMS_HEADER = [
     },
 ];
 
+let useClickOutside = (handler) => {
+    let domNode = useRef();
+    useEffect(() => {
+        let maybeHandler = (event) => {
+            if (!domNode.current.contains(event.target)) {
+                handler();
+            }
+        };
+        document.addEventListener('mousedown', maybeHandler);
+
+        return () => {
+            document.removeEventListener('mousedown', maybeHandler);
+        };
+    });
+
+    return domNode;
+};
+
 function Header() {
     const [searchModal, setSearchModal] = useState(false);
     const _handleMenuItemsHeader = () => {
@@ -62,6 +80,9 @@ function Header() {
     const _handleSearch = () => {
         setSearchModal(!searchModal);
     };
+    let domNode = useClickOutside(() => {
+        setSearchModal(!searchModal);
+    });
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -81,7 +102,11 @@ function Header() {
                     <div className={cx('oder-number')}>0</div>
                     <BsCart4 />
                 </div>
-                {searchModal && <Dialog dialogsearch children={<Search onClick={_handleSearch} />} />}
+                {searchModal && (
+                    <Dialog ref={domNode} dialogsearch onClick={useClickOutside}>
+                        {<Search onClick={_handleSearch} />}
+                    </Dialog>
+                )}
             </div>
         </div>
     );
