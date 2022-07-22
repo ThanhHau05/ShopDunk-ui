@@ -2,11 +2,15 @@ import styles from './Dialog.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
-function Dialog({ dialogsearch, children }) {
+function Dialog({ ref, dialogsearch = false, children, onClick }) {
     const classes = cx('wrapper', {
         dialogsearch,
     });
-    return <div className={classes}>{children}</div>;
+    return (
+        <div ref={ref} className={classes} onClick={onClick}>
+            {children}
+        </div>
+    );
 }
 
 export default Dialog;
