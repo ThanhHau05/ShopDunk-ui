@@ -9,6 +9,7 @@ import Config from '~/Config';
 import Button from '~/Components/Button';
 import Search from '~/Pages/Search';
 import Dialog from '~/Components/Dialog';
+import { useClickOutside } from './useClickOutside';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS_HEADER = [
@@ -50,24 +51,6 @@ const MENU_ITEMS_HEADER = [
     },
 ];
 
-let useClickOutside = (handler) => {
-    let domNode = useRef();
-    useEffect(() => {
-        let maybeHandler = (event) => {
-            if (!domNode.current.contains(event.target)) {
-                handler();
-            }
-        };
-        document.addEventListener('mousedown', maybeHandler);
-
-        return () => {
-            document.removeEventListener('mousedown', maybeHandler);
-        };
-    });
-
-    return domNode;
-};
-
 function Header() {
     const [searchModal, setSearchModal] = useState(false);
     const _handleMenuItemsHeader = () => {
@@ -80,8 +63,8 @@ function Header() {
     const _handleSearch = () => {
         setSearchModal(!searchModal);
     };
-    let domNode = useClickOutside(() => {
-        setSearchModal(!searchModal);
+    const domNode = useClickOutside(() => {
+        setSearchModal(false);
     });
     return (
         <div className={cx('wrapper')}>
@@ -103,7 +86,7 @@ function Header() {
                     <BsCart4 />
                 </div>
                 {searchModal && (
-                    <Dialog ref={domNode} dialogsearch onClick={useClickOutside}>
+                    <Dialog ref={domNode} dialogsearch>
                         {<Search onClick={_handleSearch} />}
                     </Dialog>
                 )}
