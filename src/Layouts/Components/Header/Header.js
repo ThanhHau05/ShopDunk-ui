@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { createContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BtnSearch } from '~/Components/Icons';
 import { BsCart4 } from 'react-icons/bs';
+import { useClickOutside } from '~/Hooks/useClickOutside';
+import { IoMdClose } from 'react-icons/io';
 
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
@@ -50,26 +52,11 @@ const MENU_ITEMS_HEADER = [
     },
 ];
 
-let useClickOutside = (handler) => {
-    let domNode = useRef();
-    useEffect(() => {
-        let maybeHandler = (event) => {
-            if (!domNode.current.contains(event.target)) {
-                handler();
-            }
-        };
-        document.addEventListener('mousedown', maybeHandler);
-
-        return () => {
-            document.removeEventListener('mousedown', maybeHandler);
-        };
-    });
-
-    return domNode;
-};
+export const CountuseContext = createContext();
 
 function Header() {
     const [searchModal, setSearchModal] = useState(false);
+    const [menucartModal, setMenuCartModal] = useState(false);
     const _handleMenuItemsHeader = () => {
         return MENU_ITEMS_HEADER.map((item, index) => (
             <Button menu_item_header key={index} to={item.to}>
@@ -77,11 +64,19 @@ function Header() {
             </Button>
         ));
     };
+
     const _handleSearch = () => {
         setSearchModal(!searchModal);
     };
-    let domNode = useClickOutside(() => {
-        setSearchModal(!searchModal);
+    const _handleMenuCart = () => {
+        setMenuCartModal(!searchModal);
+    };
+
+    const domNode_Search = useClickOutside(() => {
+        setSearchModal(false);
+    });
+    const domNode_MenuCart = useClickOutside(() => {
+        setMenuCartModal(false);
     });
     return (
         <div className={cx('wrapper')}>
@@ -98,16 +93,30 @@ function Header() {
                 <div className={cx('search-btn')} onClick={_handleSearch}>
                     <BtnSearch />
                 </div>
-                <div className={cx('menu-cart')}>
-                    <div className={cx('oder-number')}>0</div>
-                    <BsCart4 />
+                <div className={cx('menu-cart')} onClick={_handleMenuCart}>
+                    <div className={cx('menu-cart-icon')}>
+                        <div className={cx('oder-number')}>0</div>
+                        <BsCart4 />
+                    </div>
                 </div>
-                {searchModal && (
-                    <Dialog ref={domNode} dialogsearch onClick={useClickOutside}>
-                        {<Search onClick={_handleSearch} />}
-                    </Dialog>
-                )}
             </div>
+            {searchModal && (
+                <Dialog ref={domNode_Search} dialog_search wrapper_dialogsearch>
+                    {<Search onClick={_handleSearch} />}
+                </Dialog>
+            )}
+            {menucartModal && (
+                <Dialog ref={domNode_MenuCart} dialog_menu_cart wrapper_menucart>
+                    <div className={cx('menu-cart-main')}>
+                        <div className={cx('menu-cart_close')}>
+                            <IoMdClose />
+                        </div>
+                        <div className={cx('menu-cart_content')}>
+                            <div className={cx('menu-cart_content_message')}></div>
+                        </div>
+                    </div>
+                </Dialog>
+            )}
         </div>
     );
 }

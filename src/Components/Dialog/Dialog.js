@@ -1,16 +1,35 @@
+import { forwardRef } from 'react';
 import styles from './Dialog.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
-function Dialog({ ref, dialogsearch = false, children, onClick }) {
-    const classes = cx('wrapper', {
-        dialogsearch,
-    });
-    return (
-        <div ref={ref} className={classes} onClick={onClick}>
-            {children}
-        </div>
-    );
-}
+const Dialog = forwardRef(
+    (
+        {
+            dialog_search = false,
+            dialog_menu_cart = false,
+            wrapper_menucart = false,
+            wrapper_dialogsearch = false,
+            children,
+        },
+        ref,
+    ) => {
+        const classes = cx({
+            dialog_search,
+            dialog_menu_cart,
+        });
+        const classes_wrapper = cx('wrapper', {
+            wrapper_dialogsearch,
+            wrapper_menucart,
+        });
+        return (
+            <div className={classes}>
+                <div ref={ref} className={classes_wrapper}>
+                    {children}
+                </div>
+            </div>
+        );
+    },
+);
 
 export default Dialog;

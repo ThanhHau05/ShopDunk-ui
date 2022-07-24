@@ -29,7 +29,7 @@
     position: absolute;
 }
 
-.menu-cart {
+.menu-cart-icon {
     cursor: pointer;
     color: #fff;
     font-size: 20px;
@@ -47,4 +47,23 @@
     font-size: 10px;
     top: -0.5em;
     inset-inline-end: -0.8em;
+}
+
+.menu-cart-main {
+    width: 350px;
+    height: 753px;
+    background-color: #fff;
+    font-size: 14px;
+    padding: 20px 30px;
+}
+
+.menu-cart_close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-cart_content_message {
+    &::after {
+        content: 'Bạn chưa có sản phẩm nào trong giỏ';
+    }
 }

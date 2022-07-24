@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import Button from '~/Components/Button';
 import { IoMdClose } from 'react-icons/io';
 import { BiLoaderCircle } from 'react-icons/bi';
-import { useDebounce } from '~/Hooks';
 import { useState, useEffect } from 'react';
 const cx = classNames.bind(styles);
 
@@ -30,7 +29,6 @@ function Search({ onClick }) {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(false);
     const [count, setCount] = useState('');
-    console.log(count);
     useEffect(() => {
         if (!count.trim()) {
             return;
@@ -64,7 +62,7 @@ function Search({ onClick }) {
             </div>
             <div>
                 <div className={cx('list-item-container')}>
-                    {_handleIconListItemSearch()}
+                    <div className={cx('list-item')}>{_handleIconListItemSearch()}</div>
                     <div className={cx('search-loading-message')}>
                         {message && !loading && count !== '' && (
                             <div className={cx('search-message-btn')}>
