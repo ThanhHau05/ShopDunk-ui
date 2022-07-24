@@ -60,6 +60,13 @@
 .menu-cart_close {
     display: flex;
     justify-content: flex-end;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #818a91;
+}
+
+.menu-cart_close_icon {
+    cursor: pointer;
 }
 
 .menu-cart_content_message {

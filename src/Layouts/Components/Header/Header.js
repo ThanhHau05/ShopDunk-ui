@@ -69,7 +69,7 @@ function Header() {
         setSearchModal(!searchModal);
     };
     const _handleMenuCart = () => {
-        setMenuCartModal(!searchModal);
+        setMenuCartModal(!menucartModal);
     };
 
     const domNode_Search = useClickOutside(() => {
@@ -109,7 +109,7 @@ function Header() {
                 <Dialog ref={domNode_MenuCart} dialog_menu_cart wrapper_menucart>
                     <div className={cx('menu-cart-main')}>
                         <div className={cx('menu-cart_close')}>
-                            <IoMdClose />
+                            <IoMdClose className={cx('menu-cart_close_icon')} onClick={_handleMenuCart} />
                         </div>
                         <div className={cx('menu-cart_content')}>
                             <div className={cx('menu-cart_content_message')}></div>

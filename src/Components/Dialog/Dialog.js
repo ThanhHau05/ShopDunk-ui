@@ -22,8 +22,11 @@ const Dialog = forwardRef(
             wrapper_dialogsearch,
             wrapper_menucart,
         });
+        const _handleScroll = (e) => {
+            console.log(e.nativeEvent.contentOffset.y);
+        };
         return (
-            <div className={classes}>
+            <div className={classes} onScroll={_handleScroll}>
                 <div ref={ref} className={classes_wrapper}>
                     {children}
                 </div>
