@@ -1,0 +1,57 @@
+.wrapper {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    min-height: 252px;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+.text {
+    font-size: 15px;
+    color: #1d1d1f;
+    display: flex;
+    justify-content: center;
+}
+
+.input-register-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.input {
+    width: 538px;
+    font-size: 13px;
+    padding: 9.75px;
+    background: #fff;
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    &:focus {
+        border: 1px solid #818a91;
+    }
+}
+
+.register-btn {
+    color: #fff;
+    background: #0066cc;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    width: 176px;
+    font-size: 15px;
+    padding: 10px 35px;
+    margin-left: 5px;
+}

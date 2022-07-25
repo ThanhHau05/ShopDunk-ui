@@ -9,7 +9,7 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import Config from '~/Config';
 import Button from '~/Components/Button';
-import Search from '~/Pages/Search';
+import Search from '~/Layouts/Components/Search';
 import Dialog from '~/Components/Dialog';
 const cx = classNames.bind(styles);
 

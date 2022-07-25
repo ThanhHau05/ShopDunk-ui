@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import Sliders from '~/Components/Slider';
 import Product from '~/Components/Product';
 import Images from '~/Images';
+import Register from '~/Layouts/Components/Register';
 const cx = classNames.bind(styles);
 function Home() {
     const _handleColumn = () => {
@@ -25,6 +26,7 @@ function Home() {
                 <Product data={Images.Image_iPhone} />
                 <Product data={Images.Image_iPad} />
                 <Product data={Images.Image_Mac} />
+                <Register />
             </div>
         </div>
     );
