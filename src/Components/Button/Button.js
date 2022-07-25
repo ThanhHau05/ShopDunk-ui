@@ -16,7 +16,6 @@ function Button({
 }) {
     let Comp = 'button';
     const props = {
-        onClick,
         ...passProps,
     };
     if (to) {

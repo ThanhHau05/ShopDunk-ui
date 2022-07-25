@@ -1,4 +1,29 @@
-.home {
-    background-color: rgb(255, 225, 225);
-    height: 100%;
+.wrapper {
+}
+
+.container {
+    background-color: #f5f5f7;
+    height: 1000px;
+}
+
+.empty {
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+}
+
+.element-column-row {
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+.element-column-inner {
+    padding: 0 7.5px;
+}
+
+.element-column-image {
+    width: 390px;
+    height: 353px;
+    border-radius: 1.8%;
 }
