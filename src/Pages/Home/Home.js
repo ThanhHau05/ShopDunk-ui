@@ -1,10 +1,10 @@
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import Sliders from '~/Components/Slider';
+import Product from '~/Components/Product';
 import Images from '~/Images';
 const cx = classNames.bind(styles);
 function Home() {
-    //console.log(Images.Images_Test);
     const _handleColumn = () => {
         return Images.Image_Home_Column.map((item, index) => (
             <div key={index} className={cx('element-column-inner')}>
@@ -22,6 +22,9 @@ function Home() {
                 <div className={cx('element-column')}>
                     <div className={cx('element-column-row')}>{_handleColumn()}</div>
                 </div>
+                <Product data={Images.Image_iPhone} />
+                <Product data={Images.Image_iPad} />
+                <Product data={Images.Image_Mac} />
             </div>
         </div>
     );
