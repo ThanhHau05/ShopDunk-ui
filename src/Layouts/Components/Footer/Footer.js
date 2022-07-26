@@ -1,6 +1,7 @@
 import styles from './Footer.module.scss';
 import classNames from 'classnames/bind';
 import Content from './Content';
+import LogoWeb from '~/Images/logoweb.svg';
 import { TiSocialFacebook } from 'react-icons/ti';
 import { SiYoutube, SiZalo } from 'react-icons/si';
 const cx = classNames.bind(styles);
@@ -97,12 +98,7 @@ const lienhe = {
 };
 
 const introduce = {
-    logo: (
-        <img
-            src="https://cdn-dgcei.nitrocdn.com/QaFavQVnaqgHtiSsAelwGDKVguOuACXM/assets/static/optimized/rev-07875ad/wp-content/uploads/2021/10/Property-1White.svg"
-            alt="ShopDunk"
-        />
-    ),
+    logo: <img src={LogoWeb} alt="ShopDunk" />,
     title: 'Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển chuỗi cửa hàng tiêu chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và dịch vụ của Apple cho người dùng Việt Nam.',
     icon: [
         {

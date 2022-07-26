@@ -11,6 +11,7 @@ import Config from '~/Config';
 import Button from '~/Components/Button';
 import Search from '~/Layouts/Components/Search';
 import Dialog from '~/Components/Dialog';
+import LogoWeb from '~/Images/logoweb.svg';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS_HEADER = [
@@ -83,10 +84,7 @@ function Header() {
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
                     <Link to={Config.routes.home} className={cx('logo-link')}>
-                        <img
-                            src="https://cdn-dgcei.nitrocdn.com/QaFavQVnaqgHtiSsAelwGDKVguOuACXM/assets/static/optimized/rev-07875ad/wp-content/uploads/2021/10/Property-1White.svg"
-                            alt="ShopDunk"
-                        />
+                        <img src={LogoWeb} alt="ShopDunk" />
                     </Link>
                 </div>
                 <div className={cx('menu-item-header')}>{_handleMenuItemsHeader()}</div>

@@ -26,7 +26,7 @@ function Content({
     const _hanldeContentText = () => {
         return data.data.map((item, index) => (
             <>
-                <a href={item.to} key={index}>
+                <a href={item.to} key={index} className={cx('content-text-a')}>
                     {item.title}
                 </a>
                 <br></br>

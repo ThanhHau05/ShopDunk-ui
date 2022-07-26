@@ -92,7 +92,7 @@
     margin-bottom: 32px;
 }
 
-.content-text-p a {
+.content-text-p .content-text-a {
     position: relative;
     display: inline-block;
     color: #86868b;
@@ -100,7 +100,7 @@
     font-size: 13px;
 }
 
-a::before {
+.content-text-a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -125,5 +125,6 @@ a:hover::before {
 }
 
 .contact-a {
+    cursor: pointer;
     color: #0066cc;
 }
