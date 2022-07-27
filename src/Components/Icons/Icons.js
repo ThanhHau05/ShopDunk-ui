@@ -28,8 +28,8 @@ export const Phone = () => (
 
 export const Messenger = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
-        <circle cx="19" cy="19" r="18" stroke="#EAEAEA" stroke-width="2"></circle>
-        <g clip-path="url(#clip0_1381_24315)">
+        <circle cx="19" cy="19" r="18" stroke="#EAEAEA" strokeWidth="2"></circle>
+        <g clipPath="url(#clip0_1381_24315)">
             <path
                 d="M19 11C14.494 11 11 14.302 11 18.76C11 21.092 11.956 23.108 13.512 24.5C13.642 24.616 13.722 24.78 13.726 24.956L13.77 26.38C13.7732 26.4848 13.8021 26.5872 13.8541 26.6782C13.9062 26.7692 13.9798 26.846 14.0684 26.9019C14.1571 26.9578 14.2582 26.991 14.3627 26.9987C14.4673 27.0064 14.5721 26.9883 14.668 26.946L16.256 26.246C16.39 26.186 16.542 26.176 16.684 26.214C17.414 26.414 18.19 26.522 19 26.522C23.506 26.522 27 23.22 27 18.762C27 14.304 23.506 11 19 11Z"
                 fill="url(#paint0_radial_1381_24315)"
@@ -48,10 +48,10 @@ export const Messenger = () => (
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(13.68 27) scale(17.6)"
             >
-                <stop stop-color="#0099FF"></stop>
-                <stop offset="0.6" stop-color="#A033FF"></stop>
-                <stop offset="0.9" stop-color="#FF5280"></stop>
-                <stop offset="1" stop-color="#FF7061"></stop>
+                <stop stopColor="#0099FF"></stop>
+                <stop offset="0.6" stopColor="#A033FF"></stop>
+                <stop offset="0.9" stopColor="#FF5280"></stop>
+                <stop offset="1" stopColor="#FF7061"></stop>
             </radialGradient>
             <clipPath id="clip0_1381_24315">
                 <rect width="16" height="16" fill="white" transform="translate(11 11)"></rect>

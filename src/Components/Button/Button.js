@@ -29,10 +29,11 @@ function Button({
         menu_item_header,
         list_item_search,
     });
+    const CheckPathName = () => {};
     return (
         <>
             <>{leftline && <span className={cx('line')}></span>}</>
-            <Comp className={classes} {...props}>
+            <Comp className={classes} aria-current="page" {...props} onClick={CheckPathName}>
                 <span className={cx('title')}>{children}</span>
             </Comp>
             <>{rightline && Comp !== 'button' && <span className={cx('line')}></span>}</>

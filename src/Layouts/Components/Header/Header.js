@@ -60,7 +60,7 @@ function Header() {
     const [menucartModal, setMenuCartModal] = useState(false);
     const _handleMenuItemsHeader = () => {
         return MENU_ITEMS_HEADER.map((item, index) => (
-            <Button menu_item_header key={index} to={item.to}>
+            <Button menu_item_header key={index} href={item.to}>
                 {item.title}
             </Button>
         ));

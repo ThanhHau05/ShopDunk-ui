@@ -1,5 +1,6 @@
 import styles from './Content.module.scss';
 import classNames from 'classnames/bind';
+import { Fragment } from 'react';
 const cx = classNames.bind(styles);
 
 function Content({
@@ -25,12 +26,12 @@ function Content({
 
     const _hanldeContentText = () => {
         return data.data.map((item, index) => (
-            <>
-                <a href={item.to} key={index} className={cx('content-text-a')}>
+            <div key={index}>
+                <a href={item.to} className={cx('content-text-a')}>
                     {item.title}
                 </a>
                 <br></br>
-            </>
+            </div>
         ));
     };
     const _hanldeContentContact = () => {
