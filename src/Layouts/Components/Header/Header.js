@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BtnSearch } from '~/Components/Icons';
 import { BsCart4 } from 'react-icons/bs';
@@ -17,50 +17,55 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS_HEADER = [
     {
         title: 'iPhone',
-        to: 'iphone',
+        to: Config.routes.iphone,
     },
     {
         title: 'iPad',
-        to: 'ipad',
+        to: Config.routes.ipad,
     },
     {
         title: 'Mac',
-        to: 'mac',
+        to: Config.routes.mac,
     },
     {
         title: 'Watch',
-        to: 'watch',
+        to: Config.routes.watch,
     },
     {
         title: 'Âm Thanh',
-        to: 'am-thanh',
+        to: Config.routes.am_thanh,
     },
     {
         title: 'Phụ Kiện',
-        to: 'phu-kien',
+        to: Config.routes.phu_kien,
     },
     {
         title: 'Dịch vụ',
-        to: 'dich-vu',
+        to: Config.routes.dich_vu,
     },
     {
         title: 'Khuyến Mại',
-        to: 'khuyen-mai',
+        to: Config.routes.khuyen_mai,
     },
     {
         title: 'Trả Góp',
-        to: 'tragop',
+        to: Config.routes.tragop,
     },
 ];
 
-export const CountuseContext = createContext();
-
-function Header() {
+function Header({ selectedtitle }) {
     const [searchModal, setSearchModal] = useState(false);
     const [menucartModal, setMenuCartModal] = useState(false);
+    const [count, setCount] = useState();
+    const _onClick = (value) => {
+        setCount(value);
+    };
+    useMemo(() => {
+        setCount(selectedtitle);
+    }, [selectedtitle]);
     const _handleMenuItemsHeader = () => {
         return MENU_ITEMS_HEADER.map((item, index) => (
-            <Button menu_item_header key={index} href={item.to}>
+            <Button menu_item_header key={index} isHighLight={count === item.title} to={item.to} Selected={_onClick}>
                 {item.title}
             </Button>
         ));
@@ -83,7 +88,7 @@ function Header() {
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={Config.routes.home} className={cx('logo-link')}>
+                    <Link to={Config.routes.home} className={cx('logo-link')} onClick={_onClick}>
                         <img src={LogoWeb} alt="ShopDunk" />
                     </Link>
                 </div>

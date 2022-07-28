@@ -22,6 +22,11 @@
     display: flex;
 }
 
+.menu-item-header {
+    display: flex;
+    list-style-type: none;
+}
+
 .search-btn {
     display: flex;
     font-size: 30px;

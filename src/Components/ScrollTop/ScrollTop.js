@@ -24,9 +24,11 @@ function ScrollTop() {
     return (
         <div className={cx('wrapper')}>
             {count && (
-                <button className={cx('button')} onClick={ScrollUp}>
-                    <IoIosArrowUp className={cx('icon')} />
-                </button>
+                <div className={cx('container')}>
+                    <button className={cx('button')} onClick={ScrollUp}>
+                        <IoIosArrowUp className={cx('icon')} />
+                    </button>
+                </div>
             )}
         </div>
     );

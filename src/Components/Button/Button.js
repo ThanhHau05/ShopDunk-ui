@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './Button.module.scss';
 import classNames from 'classnames/bind';
+import { useMemo, useRef, useState } from 'react';
 const cx = classNames.bind(styles);
 
 function Button({
@@ -11,9 +12,11 @@ function Button({
     leftline,
     rightline,
     children,
-    onClick,
+    isHighLight,
+    Selected,
     ...passProps
 }) {
+    const ref = useRef();
     let Comp = 'button';
     const props = {
         ...passProps,
@@ -25,17 +28,32 @@ function Button({
         props.href = href;
         Comp = 'a';
     }
-    const classes = cx('wrapper', {
+    const classes = {
         menu_item_header,
         list_item_search,
-    });
-    const CheckPathName = () => {};
+    };
+    const selecte = useMemo(() => {
+        if (isHighLight) {
+            return 'selected';
+        }
+    }, [isHighLight]);
+    const _handlSelected = () => {
+        Selected(children);
+    };
     return (
         <>
             <>{leftline && <span className={cx('line')}></span>}</>
-            <Comp className={classes} aria-current="page" {...props} onClick={CheckPathName}>
-                <span className={cx('title')}>{children}</span>
-            </Comp>
+            <li>
+                <Comp
+                    ref={ref}
+                    className={cx('wrapper', classes, selecte)}
+                    aria-current="page"
+                    {...props}
+                    onClick={_handlSelected}
+                >
+                    <span className={cx('title')}>{children}</span>
+                </Comp>
+            </li>
             <>{rightline && Comp !== 'button' && <span className={cx('line')}></span>}</>
         </>
     );

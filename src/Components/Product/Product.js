@@ -1,9 +1,13 @@
 import styles from './Product.module.scss';
 import classNames from 'classnames/bind';
 import { IoIosArrowForward } from 'react-icons/io';
+import { SelectedContext } from '~/Layouts/DefaultLayout/DefaultLayout';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Product({ data }) {
+    const setSelectedTitle = useContext(SelectedContext);
     const _hanldeProducts = () => {
         return data.data.map((item, index) => (
             <div key={index} className={cx('product-description')}>
@@ -21,8 +25,8 @@ function Product({ data }) {
         <div className={cx('product')}>
             <div className={cx('product-container')}>
                 <div className={cx('product-container-title')}>
-                    <h2 className={cx('product-title')}>
-                        <a href={data.to}>{data.title}</a>
+                    <h2 className={cx('product-title')} onClick={() => setSelectedTitle(data.title)}>
+                        <Link to={data.to}>{data.title}</Link>
                     </h2>
                 </div>
                 <div className={cx('product-container-content')}>
