@@ -59,6 +59,7 @@ a {
 
 .product-image {
     width: 100%;
+    border-radius: 8px 8px;
 }
 
 .product-label {
@@ -68,6 +69,25 @@ a {
     font-size: 18px;
     padding-left: 24px;
     color: #1d1d1f;
+}
+
+.product-old-price-new-price {
+    display: flex;
+    padding-left: 24px;
+    height: 45.5px;
+}
+
+.product-old-price {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #86868b;
+}
+
+.product-new-price {
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0066cc;
 }
 
 .product-price {

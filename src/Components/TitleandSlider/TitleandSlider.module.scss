@@ -1,0 +1,19 @@
+.wrapper {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 451px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    margin-bottom: 26px;
+    color: #1d1d1f;
+    font-size: 40px;
+    font-weight: 700;
+}

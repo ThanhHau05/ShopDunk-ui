@@ -15,7 +15,17 @@ function Product({ data }) {
                     <div className={cx('product-label-title-image')}>
                         <img className={cx('product-image')} src={item.image} alt="" />
                         <h5 className={cx('product-label')}>{item.label}</h5>
-                        <span className={cx('product-price')}>{item.price}</span>
+                        <div className={cx('product-old-price-new-price')}>
+                            {item.old_price ? (
+                                <>
+                                    <span className={cx('product-old-price')}>{item.old_price}</span>
+                                    &#160;
+                                    <span className={cx('product-new-price')}>{item.price}</span>
+                                </>
+                            ) : (
+                                <span className={cx('product-price')}>{item.price}</span>
+                            )}
+                        </div>
                     </div>
                 </a>
             </div>

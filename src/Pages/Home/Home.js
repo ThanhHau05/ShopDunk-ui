@@ -16,7 +16,7 @@ function Home() {
     };
     return (
         <div className={cx('wrapper')}>
-            <Sliders home_slider />
+            <Sliders home_slider image={Images.Image_Home_Slider} imagelength={Images.Image_Home_Slider.length - 1} />
             <div className={cx('container')}>
                 <div className={cx('empty')}></div>
                 <div className={cx('element-column')}>
@@ -25,6 +25,7 @@ function Home() {
                 <Product data={Images.Image_iPhone} />
                 <Product data={Images.Image_iPad} />
                 <Product data={Images.Image_Mac} />
+                <Product data={Images.Image_Phu_Kien} />
             </div>
         </div>
     );

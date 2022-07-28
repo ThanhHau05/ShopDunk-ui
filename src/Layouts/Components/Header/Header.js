@@ -85,7 +85,7 @@ function Header({ selectedtitle }) {
         setMenuCartModal(false);
     });
     return (
-        <div className={cx('wrapper')}>
+        <section className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
                     <Link to={Config.routes.home} className={cx('logo-link')} onClick={_onClick}>
@@ -120,7 +120,7 @@ function Header({ selectedtitle }) {
                     </div>
                 </Dialog>
             )}
-        </div>
+        </section>
     );
 }
 

@@ -2,45 +2,41 @@ import iphone from './iPhone';
 import ipad from './iPad';
 import mac from './Mac';
 import Config from '~/Config';
-
-function importAll(r) {
-    return r.keys().map(r);
-}
-
-const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
-
+import { ImageSlider } from './Slider';
+import { ImageHomeColumn } from './HomeColumn';
+import { ImagePhuKien } from './PhuKien';
 const Images = {
     Image_Home_Slider: [
         {
-            image: images[0],
+            image: ImageSlider[0],
         },
         {
-            image: images[1],
+            image: ImageSlider[1],
         },
         {
-            image: images[2],
+            image: ImageSlider[2],
         },
         {
-            image: images[3],
+            image: ImageSlider[3],
         },
         {
-            image: images[4],
+            image: ImageSlider[4],
         },
         {
-            image: images[5],
+            image: ImageSlider[5],
         },
     ],
     Image_Home_Column: [
         {
-            image: images[6],
+            image: ImageHomeColumn[0],
             to: 'but-pencil',
         },
         {
-            image: images[7],
+            image: ImageHomeColumn[1],
             to: 'airpods',
         },
         {
-            image: images[8],
+            image: ImageHomeColumn[2],
             to: 'phu-kien',
         },
     ],
@@ -134,6 +130,40 @@ const Images = {
                 to: 'macbook-air-m1-2020',
                 label: 'MacBook Air M1 2020',
                 price: 'Giá từ 22.190.000₫',
+            },
+        ],
+    },
+    Image_Phu_Kien: {
+        title: 'Phụ kiện chính hãng',
+        title_name: 'Phụ kiện',
+        to: Config.routes.phu_kien,
+        more: 'Xem tất cả Phụ kiện',
+        data: [
+            {
+                image: ImagePhuKien[0],
+                to: 'vi-da-iphone-leather-wallet-with-magsafe',
+                label: 'Ví da iPhone Leather Wallet with MagSafe',
+                price: '1.490.000₫',
+            },
+            {
+                image: ImagePhuKien[1],
+                to: 'sac-magsafe-charger',
+                label: 'Sạc Magsafe charger',
+                price: '1.290.000₫',
+                old_price: '1.990.000₫',
+            },
+            {
+                image: ImagePhuKien[0],
+                to: 'vi-da-iphone-leather-wallet-with-magsafe',
+                label: 'Ví da iPhone Leather Wallet with MagSafe',
+                price: '1.490.000₫',
+            },
+            {
+                image: ImagePhuKien[1],
+                to: 'sac-magsafe-charger',
+                label: 'Sạc Magsafe charger',
+                price: '1.290.000₫',
+                old_price: '1.990.000₫',
             },
         ],
     },
