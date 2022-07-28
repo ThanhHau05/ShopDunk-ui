@@ -1,6 +1,7 @@
 import iphone from './iPhone';
 import ipad from './iPad';
 import mac from './Mac';
+import Config from '~/Config';
 
 function importAll(r) {
     return r.keys().map(r);
@@ -45,7 +46,7 @@ const Images = {
     ],
     Image_iPhone: {
         title: 'iPhone',
-        to: 'iphone',
+        to: Config.routes.iphone,
         more: 'Xem tất cả iPhone',
         data: [
             {
@@ -76,7 +77,7 @@ const Images = {
     },
     Image_iPad: {
         title: 'iPad',
-        to: 'ipad',
+        to: Config.routes.ipad,
         more: 'Xem tất cả iPad',
         data: [
             {
@@ -107,7 +108,7 @@ const Images = {
     },
     Image_Mac: {
         title: 'Mac',
-        to: 'mac',
+        to: Config.routes.mac,
         more: 'Xem tất cả Mac',
         data: [
             {
