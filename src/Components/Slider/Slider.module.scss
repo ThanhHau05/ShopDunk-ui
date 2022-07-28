@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 
-.iphone_slider {
+.pages_slider {
     height: 375px;
     width: 1200px;
     position: relative;
@@ -39,27 +39,32 @@
 .prev {
     position: absolute;
     top: 44.5%;
-    cursor: pointer;
 }
 
-.prev-icon {
-    height: 52px;
-    width: 52px;
-    padding: 10px;
-    border-radius: 50px;
-    background: #515154;
-    margin-left: 56px;
-    opacity: 0.25;
-}
-
+.prev-icon,
 .next-icon {
     height: 52px;
     width: 52px;
     padding: 10px;
     border-radius: 50px;
     background: #515154;
-    margin-right: 56px;
     opacity: 0.25;
+    cursor: pointer;
+    &:hover {
+        background: #515154;
+        box-shadow: none;
+        border: 0px solid RGBA(0, 0, 0, 1);
+        opacity: 1;
+        transition: background-color 0.3s, opacity 0.4s;
+    }
+}
+
+.next-icon {
+    margin-right: 56px;
+}
+
+.prev-icon {
+    margin-left: 56px;
 }
 
 .next {

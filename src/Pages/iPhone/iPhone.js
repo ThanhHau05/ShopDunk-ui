@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 function iPhone() {
     return (
         <TitleandSlider
-            classes="iphone_slider"
+            classes="pages_slider"
             title="iPhone"
             image={ImagesiPhone}
             imagelength={ImagesiPhone.length - 1}
