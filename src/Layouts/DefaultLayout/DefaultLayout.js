@@ -12,9 +12,10 @@ export const SelectedContext = createContext();
 
 function DefaultLayout({ children }) {
     const [selectedtitle, setSelectedTitle] = useState();
+    const [buttonheader, setButtonHeader] = useState(false);
     return (
         <div className={cx('wrapper')}>
-            <SelectedContext.Provider value={setSelectedTitle}>
+            <SelectedContext.Provider value={{ setSelectedTitle }}>
                 <Header selectedtitle={selectedtitle} />
                 <div className={cx('content')}>
                     {children}

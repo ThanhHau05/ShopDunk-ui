@@ -9,6 +9,7 @@ const routes = {
     dich_vu: '/dich-vu',
     khuyen_mai: '/khuyen-mai',
     tragop: '/tragop',
+    pagenotfound: '*',
 };
 
 export default routes;

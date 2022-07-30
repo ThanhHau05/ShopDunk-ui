@@ -2,6 +2,7 @@ import styles from './Footer.module.scss';
 import classNames from 'classnames/bind';
 import Content from './Content';
 import LogoWeb from '~/Images/logoweb.svg';
+import Config from '~/Config';
 import { TiSocialFacebook } from 'react-icons/ti';
 import { SiYoutube, SiZalo } from 'react-icons/si';
 const cx = classNames.bind(styles);
@@ -11,31 +12,31 @@ const sanpham = {
     data: [
         {
             title: 'iPhone',
-            to: 'iphone',
+            to: Config.routes.iphone,
         },
         {
             title: 'iPad',
-            to: 'ipad',
+            to: Config.routes.ipad,
         },
         {
             title: 'Mac',
-            to: 'mac',
+            to: Config.routes.mac,
         },
         {
             title: 'Apple Watch',
-            to: 'apple-watch',
+            to: Config.routes.watch,
         },
         {
             title: 'Âm thanh',
-            to: 'am-thanh',
+            to: Config.routes.am_thanh,
         },
         {
             title: 'Phụ kiện',
-            to: 'phu-kien',
+            to: Config.routes.phu_kien,
         },
         {
             title: 'Dịch vụ',
-            to: 'dich-vu',
+            to: Config.routes.dich_vu,
         },
     ],
 };

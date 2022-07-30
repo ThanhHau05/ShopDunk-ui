@@ -1,6 +1,5 @@
 import styles from './Content.module.scss';
 import classNames from 'classnames/bind';
-import { Fragment } from 'react';
 const cx = classNames.bind(styles);
 
 function Content({

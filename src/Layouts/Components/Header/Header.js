@@ -53,7 +53,7 @@ const MENU_ITEMS_HEADER = [
     },
 ];
 
-function Header({ selectedtitle }) {
+function Header({ selectedtitle, buttonheader }) {
     const [searchModal, setSearchModal] = useState(false);
     const [menucartModal, setMenuCartModal] = useState(false);
     const [count, setCount] = useState();
