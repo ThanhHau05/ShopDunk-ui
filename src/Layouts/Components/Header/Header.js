@@ -57,12 +57,42 @@ function Header({ selectedtitle }) {
     const [searchModal, setSearchModal] = useState(false);
     const [menucartModal, setMenuCartModal] = useState(false);
     const [count, setCount] = useState();
-    const _onClick = (value) => {
-        setCount(value);
-    };
+
     useMemo(() => {
         setCount(selectedtitle);
     }, [selectedtitle]);
+
+    useEffect(() => {
+        const localS = JSON.parse(localStorage.getItem('count'));
+        setCount(localS);
+    }, []);
+
+    const _onClick = (value) => {
+        setCount(value);
+        localStorage.setItem('count', JSON.stringify(value));
+    };
+
+    const _onClickLogo = () => {
+        setCount('');
+        localStorage.clear();
+    };
+
+    const _handleSearch = () => {
+        setSearchModal(!searchModal);
+    };
+
+    const _handleMenuCart = () => {
+        setMenuCartModal(!menucartModal);
+    };
+
+    const domNode_Search = useClickOutside(() => {
+        setSearchModal(false);
+    });
+
+    const domNode_MenuCart = useClickOutside(() => {
+        setMenuCartModal(false);
+    });
+
     const _handleMenuItemsHeader = () => {
         return MENU_ITEMS_HEADER.map((item, index) => (
             <Button menu_item_header key={index} isHighLight={count === item.title} to={item.to} Selected={_onClick}>
@@ -71,24 +101,11 @@ function Header({ selectedtitle }) {
         ));
     };
 
-    const _handleSearch = () => {
-        setSearchModal(!searchModal);
-    };
-    const _handleMenuCart = () => {
-        setMenuCartModal(!menucartModal);
-    };
-
-    const domNode_Search = useClickOutside(() => {
-        setSearchModal(false);
-    });
-    const domNode_MenuCart = useClickOutside(() => {
-        setMenuCartModal(false);
-    });
     return (
         <section className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={Config.routes.home} className={cx('logo-link')} onClick={_onClick}>
+                    <Link to={Config.routes.home} className={cx('logo-link')} onClick={_onClickLogo}>
                         <img src={LogoWeb} alt="ShopDunk" />
                     </Link>
                 </div>

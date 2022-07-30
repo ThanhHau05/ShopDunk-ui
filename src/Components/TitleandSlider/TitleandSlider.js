@@ -8,7 +8,7 @@ function TitleandSlider({ classes, title, image, imagelength }) {
             <div className={cx('content')}>
                 <h2 className={cx('title')}>{title}</h2>
             </div>
-            <Sliders classs={classes} image={image} imagelength={imagelength} />
+            <Sliders slider_pages classs={classes} image={image} imagelength={imagelength} />
         </div>
     );
 }

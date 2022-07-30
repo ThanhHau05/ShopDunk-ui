@@ -1,4 +1,4 @@
-import styles from './Product.module.scss';
+import styles from './ProductHome.module.scss';
 import classNames from 'classnames/bind';
 import { IoIosArrowForward } from 'react-icons/io';
 import { SelectedContext } from '~/Layouts/DefaultLayout/DefaultLayout';
@@ -6,12 +6,12 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
-function Product({ data }) {
+function ProductHome({ data }) {
     const setSelectedTitle = useContext(SelectedContext);
     const _hanldeProducts = () => {
         return data.data.map((item, index) => (
             <div key={index} className={cx('product-description')}>
-                <a href={item.to}>
+                <a className={cx('product-a')} href={item.to}>
                     <div className={cx('product-label-title-image')}>
                         <img className={cx('product-image')} src={item.image} alt="" />
                         <h5 className={cx('product-label')}>{item.label}</h5>
@@ -55,4 +55,4 @@ function Product({ data }) {
     );
 }
 
-export default Product;
+export default ProductHome;

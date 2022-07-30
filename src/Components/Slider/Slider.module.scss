@@ -45,7 +45,7 @@
 .next-icon {
     height: 52px;
     width: 52px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     background: #515154;
     opacity: 0.25;
@@ -61,15 +61,24 @@
 
 .next-icon {
     margin-right: 56px;
+    color: #fff;
 }
 
 .prev-icon {
     margin-left: 56px;
+    color: #fff;
 }
 
 .next {
     right: 0;
     border-radius: 5px 0px 0px 5px;
+}
+
+.slider_pages {
+    padding: 2px;
+    width: 42px;
+    height: 42px;
+    margin: 0px 40px;
 }
 
 .all-dots {

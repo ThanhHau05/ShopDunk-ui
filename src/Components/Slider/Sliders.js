@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const cx = classNames.bind(styles);
-function Sliders({ classs, home_slider = false, image, imagelength }) {
+function Sliders({ slider_pages = false, classs, home_slider = false, image, imagelength }) {
     const [activeIndex, setActiveIndex] = useState(0);
     useEffect(() => {
         const interval = setInterval(() => {
@@ -33,13 +33,13 @@ function Sliders({ classs, home_slider = false, image, imagelength }) {
                     className={cx('prev')}
                     onClick={() => setActiveIndex(activeIndex < 1 ? imagelength : activeIndex - 1)}
                 >
-                    <IoIosArrowBack className={cx('prev-icon')} />
+                    <IoIosArrowBack className={cx('prev-icon', { slider_pages })} />
                 </div>
                 <span
                     className={cx('next')}
                     onClick={() => setActiveIndex(activeIndex === imagelength ? 0 : activeIndex + 1)}
                 >
-                    <IoIosArrowForward className={cx('next-icon')} />
+                    <IoIosArrowForward className={cx('next-icon', { slider_pages })} />
                 </span>
                 <div className={cx('all-dots')}>
                     {image.map((slide, index) => (

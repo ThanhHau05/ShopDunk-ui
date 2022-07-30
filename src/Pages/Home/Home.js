@@ -1,7 +1,7 @@
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import Sliders from '~/Components/Slider';
-import Product from '~/Components/Product';
+import ProductHome from '~/Components/ProductHome';
 import Images from '~/Images';
 const cx = classNames.bind(styles);
 function Home() {
@@ -22,10 +22,10 @@ function Home() {
                 <div className={cx('element-column')}>
                     <div className={cx('element-column-row')}>{_handleColumn()}</div>
                 </div>
-                <Product data={Images.Image_iPhone} />
-                <Product data={Images.Image_iPad} />
-                <Product data={Images.Image_Mac} />
-                <Product data={Images.Image_Phu_Kien} />
+                <ProductHome data={Images.Image_iPhone} />
+                <ProductHome data={Images.Image_iPad} />
+                <ProductHome data={Images.Image_Mac} />
+                <ProductHome data={Images.Image_Phu_Kien} />
             </div>
         </div>
     );

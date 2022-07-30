@@ -1,7 +1,7 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 import classNames from 'classnames/bind';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef } from 'react';
 const cx = classNames.bind(styles);
 
 function Button({

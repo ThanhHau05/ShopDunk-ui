@@ -1,0 +1,137 @@
+.wrapper {
+    width: 1220px;
+    height: 100%;
+}
+
+.container {
+    max-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-description {
+    position: relative;
+    float: left;
+    display: flex;
+    width: 305px;
+    padding: 0 10px;
+    margin-bottom: 32px;
+}
+
+.list-items-background {
+    position: absolute;
+    width: 93%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    opacity: 0.6;
+}
+
+.product-a {
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 4%);
+}
+.product-label-title-image {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    &:hover {
+        border-width: 1px 1px 1px 1px;
+        border-color: #02010100;
+        box-shadow: 1px 1px 28px 0px rgb(0 0 0 / 12%);
+        transition: background-color 0.3s, border 0.2s, border-radius 0.2s, box-shadow 0.2s;
+    }
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 8px 8px;
+}
+
+.product-label {
+    height: 54px;
+    display: flex;
+    margin-bottom: 9px;
+    font-size: 18px;
+    padding-left: 24px;
+    color: #1d1d1f;
+}
+
+.product-old-price-new-price {
+    display: flex;
+    padding-left: 24px;
+    height: 45.5px;
+}
+
+.product-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0066cc;
+    padding-bottom: 23px;
+}
+
+.see-more {
+    padding: 40px 0 64px;
+    display: flex;
+    justify-content: center;
+}
+
+.see-more-container {
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+}
+
+.content-see-more {
+    width: 600px;
+    height: 199px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 44px 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 4%);
+}
+
+.content-see-more-left {
+    margin-right: 10px;
+}
+
+.content-see-more-right {
+    margin-left: 10px;
+}
+
+.see-more-title-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 55px;
+}
+
+.see-more-title {
+    height: 28px;
+}
+
+.see-more-a {
+}
+
+.see-more-two-title {
+    color: #1d1d1f;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.see-more-a {
+    display: flex;
+    color: #0066cc;
+    margin-top: 10px;
+}
+
+.see-more-text {
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+.see-more-icon {
+    display: flex;
+    align-items: center;
+}

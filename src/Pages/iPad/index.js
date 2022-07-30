@@ -1,1 +1,1 @@
-export { default } from './iPad';
+export { default } from './Page_iPad';
