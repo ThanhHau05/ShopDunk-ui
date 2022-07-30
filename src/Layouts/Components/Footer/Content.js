@@ -57,7 +57,7 @@ function Content({
             {introduce ? (
                 <div className={cx('introduce')}>
                     <div className={cx('logo')}>{data.logo}</div>
-                    <div className={cx('content')}>{data.title}</div>
+                    <p className={cx('content')}>{data.title}</p>
                     <div className={cx('icon-list-items')}>{_handleIconListItems()}</div>
                 </div>
             ) : (

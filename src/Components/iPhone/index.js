@@ -54,7 +54,7 @@ const ImagesListItemiPhone = {
         {
             image: images[5],
             to: Config.routes.dich_vu,
-            title1: 'Phụ kiên iPhone',
+            title1: 'Phụ kiện iPhone',
             title2: 'thường mua kèm',
             text: 'Tim phụ kiện iPhone',
         },
