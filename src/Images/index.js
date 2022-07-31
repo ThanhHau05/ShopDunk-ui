@@ -42,6 +42,7 @@ const Images = {
     ],
     Image_iPhone: {
         title: 'iPhone',
+        current: 'iPhone',
         to: Config.routes.iphone,
         more: 'Xem tất cả iPhone',
         data: [
@@ -73,6 +74,7 @@ const Images = {
     },
     Image_iPad: {
         title: 'iPad',
+        current: 'iPad',
         to: Config.routes.ipad,
         more: 'Xem tất cả iPad',
         data: [
@@ -104,6 +106,7 @@ const Images = {
     },
     Image_Mac: {
         title: 'Mac',
+        current: 'Mac',
         to: Config.routes.mac,
         more: 'Xem tất cả Mac',
         data: [
@@ -136,6 +139,7 @@ const Images = {
     Image_Phu_Kien: {
         title: 'Phụ kiện chính hãng',
         title_name: 'Phụ kiện',
+        current: 'Phụ Kiện',
         to: Config.routes.phu_kien,
         more: 'Xem tất cả Phụ kiện',
         data: [

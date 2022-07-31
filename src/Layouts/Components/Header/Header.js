@@ -53,15 +53,16 @@ const MENU_ITEMS_HEADER = [
     },
 ];
 
-function Header({ selectedtitle, buttonheader }) {
+function Header({ selectedtitle }) {
     const [searchModal, setSearchModal] = useState(false);
     const [menucartModal, setMenuCartModal] = useState(false);
     const [count, setCount] = useState();
-
+    if (window.location.pathname === '/') {
+        localStorage.clear();
+    }
     useMemo(() => {
         setCount(selectedtitle);
     }, [selectedtitle]);
-
     useEffect(() => {
         const localS = JSON.parse(localStorage.getItem('count'));
         setCount(localS);
@@ -72,10 +73,7 @@ function Header({ selectedtitle, buttonheader }) {
         localStorage.setItem('count', JSON.stringify(value));
     };
 
-    const _onClickLogo = () => {
-        setCount('');
-        localStorage.clear();
-    };
+    const _onClickLogo = () => setCount('');
 
     const _handleSearch = () => {
         setSearchModal(!searchModal);

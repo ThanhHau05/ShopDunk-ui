@@ -2,6 +2,7 @@ import styles from './Footer.module.scss';
 import classNames from 'classnames/bind';
 import Content from './Content';
 import LogoWeb from '~/Images/logoweb.svg';
+import LogoBoCongThuong from '~/Images/logobocongthuong.png';
 import Config from '~/Config';
 import { TiSocialFacebook } from 'react-icons/ti';
 import { SiYoutube, SiZalo } from 'react-icons/si';
@@ -12,30 +13,37 @@ const sanpham = {
     data: [
         {
             title: 'iPhone',
+            current: 'iPhone',
             to: Config.routes.iphone,
         },
         {
             title: 'iPad',
+            current: 'iPad',
             to: Config.routes.ipad,
         },
         {
             title: 'Mac',
+            current: 'Mac',
             to: Config.routes.mac,
         },
         {
             title: 'Apple Watch',
+            current: 'Watch',
             to: Config.routes.watch,
         },
         {
             title: 'Âm thanh',
+            current: 'Âm Thanh',
             to: Config.routes.am_thanh,
         },
         {
             title: 'Phụ kiện',
+            current: 'Phụ Kiện',
             to: Config.routes.phu_kien,
         },
         {
             title: 'Dịch vụ',
+            current: 'Dịch vụ',
             to: Config.routes.dich_vu,
         },
     ],
@@ -44,28 +52,28 @@ const sanpham = {
 const thongtin = {
     title: 'Thông tin',
     data: [
-        { title: 'Giới thiệu' },
-        { title: 'Khuyến mại' },
-        { title: 'Bảo hành và sửa chữa' },
-        { title: 'Tuyển dụng' },
-        { title: 'Tin tức' },
-        { title: 'Check IMEI' },
-        { title: 'Phương thức thanh toán' },
-        { title: 'Gửi góp ý, khiếu nại' },
+        { title: 'Giới thiệu', to: '*' },
+        { title: 'Khuyến mại', to: '*' },
+        { title: 'Bảo hành và sửa chữa', to: '*' },
+        { title: 'Tuyển dụng', to: '*' },
+        { title: 'Tin tức', to: '*' },
+        { title: 'Check IMEI', to: '*' },
+        { title: 'Phương thức thanh toán', to: '*' },
+        { title: 'Gửi góp ý, khiếu nại', to: '*' },
     ],
 };
 
 const chinhsach = {
     title: 'Chính sách',
     data: [
-        { title: 'Trả góp' },
-        { title: 'Giao hàng' },
-        { title: 'Giao hàng (ZaloPay)' },
-        { title: 'Hủy giao dịch' },
-        { title: 'Đổi trả' },
-        { title: 'Bảo hành' },
-        { title: 'Giải quyết khiếu nại' },
-        { title: 'Bảo mật thông tin' },
+        { title: 'Trả góp', to: '*' },
+        { title: 'Giao hàng', to: '*' },
+        { title: 'Giao hàng (ZaloPay)', to: '*' },
+        { title: 'Hủy giao dịch', to: '*' },
+        { title: 'Đổi trả', to: '*' },
+        { title: 'Bảo hành', to: '*' },
+        { title: 'Giải quyết khiếu nại', to: '*' },
+        { title: 'Bảo mật thông tin', to: '*' },
     ],
 };
 
@@ -74,9 +82,11 @@ const diachi = {
     data: [
         {
             title: 'Tìm Store trên Google Map',
+            to: '*',
         },
         {
             title: 'Hệ thống cửa hàng',
+            to: '*',
         },
     ],
 };
@@ -146,11 +156,7 @@ function Footer() {
                                 lienhe@shopdunk.com
                             </p>
                         </div>
-                        <img
-                            className={cx('image')}
-                            src="https://cdn-dgcei.nitrocdn.com/QaFavQVnaqgHtiSsAelwGDKVguOuACXM/assets/static/optimized/rev-3524ea6/wp-content/uploads/2022/01/bo-cong-thuong-1170x780-2.png"
-                            alt=""
-                        />
+                        <img className={cx('image')} src={LogoBoCongThuong} alt="" />
                     </div>
                 </div>
             </div>

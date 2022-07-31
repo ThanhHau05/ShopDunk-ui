@@ -1,8 +1,12 @@
 import styles from './Products.module.scss';
 import classNames from 'classnames/bind';
+import { SelectedContext } from '~/Layouts/DefaultLayout/DefaultLayout';
 import { IoIosArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 const cx = classNames.bind(styles);
 function Product({ current, isHighlight, data }) {
+    const setSelectedTitle = useContext(SelectedContext);
     const _hanldeProducts = () => {
         if (current === undefined || current === 'tatca') {
             return _handleRenderProductAll();
@@ -45,6 +49,13 @@ function Product({ current, isHighlight, data }) {
             </div>
         ));
     };
+    const _handleSelectedTitle = (value) => {
+        if (value !== 'so-sanh') {
+            setSelectedTitle('Phụ Kiện');
+        } else {
+            setSelectedTitle('');
+        }
+    };
     const _hanldeSeeMore = () => {
         return data.more.map((item, index) => (
             <div
@@ -59,12 +70,12 @@ function Product({ current, isHighlight, data }) {
                     <img className={cx('see-more-image')} src={item.image} alt="" />
                 </a>
                 <div className={cx('see-more-title-text')}>
-                    <a className={cx('see-more-a')} href={item.to}>
-                        <div className={cx('see-more-two-title')}>
+                    <Link className={cx('see-more-a')} to={item.to}>
+                        <div className={cx('see-more-two-title')} onClick={() => _handleSelectedTitle(item.to)}>
                             <div className={cx('see-more-title')}>{item.title1}</div>
                             <div className={cx('see-more-title')}>{item.title2}</div>
                         </div>
-                    </a>
+                    </Link>
                     <a className={cx('see-more-a')} href={item.to}>
                         <div className={cx('see-more-text')}>{item.text}</div>
                         <div className={cx('see-more-icon')}>

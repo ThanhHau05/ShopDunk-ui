@@ -1,5 +1,8 @@
 import styles from './Content.module.scss';
 import classNames from 'classnames/bind';
+import { SelectedContext } from '~/Layouts/DefaultLayout/DefaultLayout';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 const cx = classNames.bind(styles);
 
 function Content({
@@ -11,6 +14,7 @@ function Content({
     address = false,
     contact = false,
 }) {
+    const setSelectedTitle = useContext(SelectedContext);
     const _handleIconListItems = () => {
         return data.icon.map((item, index) => (
             <div className={cx('content-item')} key={index}>
@@ -26,9 +30,9 @@ function Content({
     const _hanldeContentText = () => {
         return data.data.map((item, index) => (
             <div key={index}>
-                <a href={item.to} className={cx('content-text-a')}>
+                <Link to={item.to} className={cx('content-text-a')} onClick={() => setSelectedTitle(item.current)}>
                     {item.title}
-                </a>
+                </Link>
                 <br></br>
             </div>
         ));
@@ -67,9 +71,9 @@ function Content({
                         </div>
                         <div className={cx('content-text')}>
                             {contact ? (
-                                <p className={cx('content-text-contact-p')}>{_hanldeContentContact()}</p>
+                                <div className={cx('content-text-contact-p')}>{_hanldeContentContact()}</div>
                             ) : (
-                                <p className={cx('content-text-p')}>{_hanldeContentText()}</p>
+                                <div className={cx('content-text-p')}>{_hanldeContentText()}</div>
                             )}
                         </div>
                     </div>

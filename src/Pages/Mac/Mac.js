@@ -58,7 +58,7 @@ function Mac() {
             <div className={cx('container')}>
                 <TitleandSlider
                     classes="pages_slider"
-                    title="iPhone"
+                    title="iPad"
                     image={ImagesMac}
                     imagelength={ImagesMac.length - 1}
                 />

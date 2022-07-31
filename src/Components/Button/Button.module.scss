@@ -5,17 +5,19 @@
 
 .menu_item_header {
     color: #d2d2d7;
-    padding: 22px 25px;
+    padding: 20px 25px;
     transition: background-color 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     &:hover {
         background-color: #3f3f3f;
         color: #fff;
+        height: 6.3rem;
     }
 }
 
 .selected {
     background-color: #3f3f3f;
     color: #fff;
+    height: 6.3rem;
 }
 
 .list_item_search {

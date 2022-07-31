@@ -1,0 +1,107 @@
+.container {
+    width: 100%;
+    font-size: 14px;
+}
+
+.elementor-select {
+    font-size: 16px;
+    color: #4b4b4b;
+    padding: 12px 32px 8px 12px;
+    height: 40px;
+    width: 300px;
+    display: flex;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 0;
+    margin-bottom: 20px;
+}
+
+.classSelect {
+    width: 191.6px;
+    height: 46px;
+    font-weight: 100;
+    color: #666666;
+    font-size: 14px;
+    padding: 15px 10px;
+}
+
+.classFilterSelect {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filters-checkbox-brand,
+.filters-radio {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.filters-checkbox-title,
+.filters-radio-title {
+    color: #4b4b4b;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.checkbox-input,
+.radio-input {
+    outline: 0;
+    visibility: hidden;
+    margin: 0;
+    float: left;
+    font-size: inherit;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.checkbox-list-button-title,
+.radio-list-button-title {
+    display: flex;
+    height: 34.4px;
+    padding-top: 3px;
+    margin: 0 2.5px 5px;
+    cursor: pointer;
+}
+
+.checbox-list-button,
+.radio-list-button {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checbox-list-button {
+    border-radius: 3px;
+}
+
+.checbox-list-button-background,
+.radio-list-button-background {
+    background-color: #ccc;
+}
+
+.checkbox-list-button-icon,
+.radio-list-button-icon {
+    color: #fff;
+    font-size: 11.5px;
+    margin-right: 1px;
+    margin-top: 1px;
+}
+
+.checkbox-list-button-icon {
+    margin-right: 0.5px;
+}
+
+.checkbox-list-title,
+.radio-list-title {
+    color: #515154;
+}

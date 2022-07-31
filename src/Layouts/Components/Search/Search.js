@@ -50,13 +50,19 @@ function Search({ onClick }) {
     };
     return (
         <div className={cx('wrapper')}>
-            <button className={cx('search-btn')}>
-                <BtnSearch />
-            </button>
-            <input onChange={(e) => setCount(e.target.value)} className={cx('search')} placeholder="Tìm sản phẩm..." />
-            <button className={cx('close-btn')} onClick={onClick}>
-                <IoMdClose />
-            </button>
+            <div className={cx('elementor-search')}>
+                <button className={cx('search-btn')}>
+                    <BtnSearch />
+                </button>
+                <input
+                    onChange={(e) => setCount(e.target.value)}
+                    className={cx('search')}
+                    placeholder="Tìm sản phẩm..."
+                />
+                <button className={cx('close-btn')} onClick={onClick}>
+                    <IoMdClose />
+                </button>
+            </div>
             <div className={cx('access')}>
                 <h4 className={cx('access-h4')}>Truy cập nhanh</h4>
             </div>

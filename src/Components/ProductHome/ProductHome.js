@@ -35,7 +35,7 @@ function ProductHome({ data }) {
         <div className={cx('product')}>
             <div className={cx('product-container')}>
                 <div className={cx('product-container-title')}>
-                    <h2 className={cx('product-title')} onClick={() => setSelectedTitle(data.title)}>
+                    <h2 className={cx('product-title')} onClick={() => setSelectedTitle(data.current)}>
                         <Link to={data.to}>{data.title}</Link>
                     </h2>
                 </div>

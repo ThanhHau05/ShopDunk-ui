@@ -43,17 +43,15 @@ function Button({
     return (
         <>
             <>{leftline && <span className={cx('line')}></span>}</>
-            <li>
-                <Comp
-                    ref={ref}
-                    className={cx('wrapper', classes, selecte)}
-                    aria-current="page"
-                    {...props}
-                    onClick={_handlSelected}
-                >
-                    <span className={cx('title')}>{children}</span>
-                </Comp>
-            </li>
+            <Comp
+                ref={ref}
+                className={cx('wrapper', classes, selecte)}
+                aria-current="page"
+                {...props}
+                onClick={_handlSelected}
+            >
+                <span className={cx('title')}>{children}</span>
+            </Comp>
             <>{rightline && Comp !== 'button' && <span className={cx('line')}></span>}</>
         </>
     );
