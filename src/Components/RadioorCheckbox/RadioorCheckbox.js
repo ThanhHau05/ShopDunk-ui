@@ -4,7 +4,16 @@ import { BsCheckLg } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
 const cx = classNames.bind(styles);
 
-function RadioorCheckbox({ select = false, classSelects = false, checkbox = false, radio = false, data }) {
+function RadioorCheckbox({
+    select = false,
+    classSelects = false,
+    checkbox = false,
+    radio = false,
+    isHighLight = false,
+    data,
+    SanPham,
+    ThuongHieu,
+}) {
     const [count, setCount] = useState();
     const [classes, setClasses] = useState();
     const [classSelect, setClassSelect] = useState();
@@ -15,8 +24,9 @@ function RadioorCheckbox({ select = false, classSelects = false, checkbox = fals
             setClasses('classFilterSelect');
         }
     }, [classSelects]);
-    const _handleBackground = (event) => {
+    const _handleBackgroundvaSanPham = (event) => {
         setCount(event);
+        SanPham(event);
     };
 
     const _handleSelect = () => {
@@ -27,12 +37,13 @@ function RadioorCheckbox({ select = false, classSelects = false, checkbox = fals
         return data.data.map((item, index) => (
             <div key={index} className={cx('radio-list-row')}>
                 <input type="radio" className={cx('radio-input')} name="product_cat" value={item.current} />
-                <div className={cx('radio-list-button-title')} onClick={() => _handleBackground(item.current)}>
+                <div className={cx('radio-list-button-title')} onClick={() => _handleBackgroundvaSanPham(item.current)}>
                     <span
                         className={cx(
                             'radio-list-button',
                             count === item.current ? 'radio-list-button-background' : '',
                         )}
+                        onClick={() => _handleBackgroundvaSanPham(item.current)}
                     >
                         <BsCheckLg className={cx('radio-list-button-icon')} />
                     </span>
@@ -46,12 +57,13 @@ function RadioorCheckbox({ select = false, classSelects = false, checkbox = fals
         if (!arraycheckbox.includes(event)) {
             arraycheckbox.push(event);
             setArrayCheckbox([...arraycheckbox]);
+            ThuongHieu(arraycheckbox);
         } else {
             arraycheckbox.splice(arraycheckbox.indexOf(event), 1);
             setArrayCheckbox([...arraycheckbox]);
+            ThuongHieu(arraycheckbox);
         }
     };
-
     const _handleCheckbox = () => {
         return data.data.map((item, index) => (
             <div key={index} className={cx('checkbox-list-row')}>
@@ -82,12 +94,14 @@ function RadioorCheckbox({ select = false, classSelects = false, checkbox = fals
                 <div className={cx('filters-radio')}>
                     <h4 className={cx('filters-radio-title')}>{data.title}</h4>
                     <div className={cx('elementor-radio')}>{_handleRadio()}</div>
+                    {isHighLight && <div className={cx('list-items-background')}></div>}
                 </div>
             )}
             {checkbox && (
                 <div className={cx('filters-checkbox-brand')}>
                     <h4 className={cx('filters-checkbox-title')}>{data.title}</h4>
                     <div className={cx('elementor-checkbox')}>{_handleCheckbox()}</div>
+                    {isHighLight && <div className={cx('list-items-background')}></div>}
                 </div>
             )}
         </div>

@@ -3,8 +3,6 @@ import classNames from 'classnames/bind';
 import { Error } from '~/Components/Icons';
 import Config from '~/Config';
 import { Link } from 'react-router-dom';
-import { SelectedContext } from '~/Layouts/DefaultLayout/DefaultLayout';
-import { useContext } from 'react';
 const cx = classNames.bind(styles);
 function PageNotFound() {
     localStorage.clear();

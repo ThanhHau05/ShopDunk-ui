@@ -2,8 +2,10 @@ import styles from './PhuKien.module.scss';
 import classNames from 'classnames/bind';
 import TitleandSlider from '~/Components/TitleandSlider';
 import { ImagesPhuKien } from './Images';
-import { BsCheckLg } from 'react-icons/bs';
+import ImagesProducts from './Images/PhuKien';
+import ImageProduct from '~/Components/ImageProduct';
 import RadioorCheckbox from '~/Components/RadioorCheckbox/RadioorCheckbox';
+import { useEffect, useState } from 'react';
 const cx = classNames.bind(styles);
 
 const ITEM_SELECT = [
@@ -62,16 +64,16 @@ const ITEM_CHECKBOX_BRAND = {
             value: 'apple',
         },
         {
-            title: 'ADAM',
-            value: 'adam',
+            title: 'Mipow',
+            value: 'mipow',
         },
         {
-            title: 'Google',
-            value: 'google',
+            title: 'RAVPower',
+            value: 'ravpower',
         },
         {
-            title: 'Harman Kardon',
-            value: 'harman-kardon',
+            title: 'JINYA',
+            value: 'jinya',
         },
     ],
 };
@@ -102,7 +104,71 @@ const ITEM_CHECKBOX_PRICE = {
     ],
 };
 
+const newarray = [];
 function PhuKien() {
+    const [background, setBackground] = useState(false);
+    const [iproduct, setIProduct] = useState([]);
+    const [iproductclone, setIProductClone] = useState([]);
+    const [cuurentnull, setCurrentNull] = useState(0);
+    const [sanpham, setSanPham] = useState();
+    useEffect(() => {
+        setIProduct(ImagesProducts);
+    }, []);
+    const _SanPham = (value) => {
+        setBackground(true);
+        setTimeout(() => {
+            setBackground(false);
+            if (newarray.length === 0) {
+                newarray.push(iproduct);
+            }
+            setIProduct([]);
+            newarray[0].map((item) => {
+                return item.current === value
+                    ? setIProduct((prev) => [...prev, item])
+                    : setCurrentNull((prev) => prev + 1);
+            });
+            if (cuurentnull === newarray[0].length) {
+                setIProduct([]);
+            }
+            setSanPham(value);
+        }, 2000);
+    };
+    const _ThuongHieu = (value) => {
+        setBackground(true);
+        value.length === 0
+            ? setTimeout(() => {
+                  setBackground(false);
+                  setIProduct(ImagesProducts);
+                  setSanPham('');
+              }, 2000)
+            : _handleThuongHieu(value);
+    };
+    const _handleThuongHieu = (value) => {
+        console.log(value);
+        console.log(sanpham);
+        if (sanpham) {
+            setTimeout(() => {
+                setBackground(false);
+                setIProduct([]);
+                setIProductClone([]);
+                ImagesProducts.map((item) => {
+                    return sanpham === item.current ? setIProductClone((prev) => [...prev, item]) : null;
+                });
+                console.log(iproductclone);
+                iproductclone.map((item) => {
+                    return value.includes(item.thuonghieu) ? setIProduct((prev) => [...prev, item]) : null;
+                });
+            }, 2000);
+        } else {
+            setTimeout(() => {
+                setBackground(false);
+                setIProduct([]);
+                ImagesProducts.map((item) => {
+                    return value.includes(item.thuonghieu) ? setIProduct((prev) => [...prev, item]) : null;
+                });
+            }, 2000);
+        }
+    };
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
@@ -116,12 +182,18 @@ function PhuKien() {
             <div className={cx('content')}>
                 <div className={cx('all-filters')}>
                     <RadioorCheckbox select data={ITEM_SELECT} />
-                    <RadioorCheckbox radio data={ITEM_RADIO} />
-                    <RadioorCheckbox checkbox data={ITEM_CHECKBOX_BRAND} />
-                    <RadioorCheckbox checkbox data={ITEM_CHECKBOX_PRICE} />
+                    <RadioorCheckbox radio isHighLight={background} data={ITEM_RADIO} SanPham={_SanPham} />
+                    <RadioorCheckbox
+                        checkbox
+                        isHighLight={background}
+                        data={ITEM_CHECKBOX_BRAND}
+                        ThuongHieu={_ThuongHieu}
+                    />
+                    <RadioorCheckbox checkbox isHighLight={background} data={ITEM_CHECKBOX_PRICE} />
                 </div>
                 <div className={cx('elementor-column-wrap')}>
                     <RadioorCheckbox select classSelects data={ITEM_SORTING} />
+                    <ImageProduct data={iproduct} isHighLight={background} sanpham={sanpham} />
                 </div>
             </div>
         </div>
