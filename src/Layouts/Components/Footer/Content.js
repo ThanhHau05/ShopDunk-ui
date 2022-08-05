@@ -19,9 +19,13 @@ function Content({
         return data.icon.map((item, index) => (
             <div className={cx('content-item')} key={index}>
                 <a href={item.to}>
-                    <div className={cx('content-icon')}>
-                        <item.icon className={cx('icon-' + index)} />
-                    </div>
+                    {item.image ? (
+                        item.image
+                    ) : (
+                        <div className={cx('content-icon')}>
+                            <item.icon className={cx('icon-' + index)} />
+                        </div>
+                    )}
                 </a>
             </div>
         ));

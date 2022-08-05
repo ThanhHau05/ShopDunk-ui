@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import Product from '~/Components/Product';
 import TitleandSlider from '~/Components/TitleandSlider';
 import { ImagesiPhone } from './Images';
+import { ImagesiPhoneMobile } from './Images/ImageMobile';
 import ImagesListItemiPhone from '~/Components/iPhone';
 import ButtonPages from '~/Components/ButtonPages';
 const cx = classNames.bind(styles);
@@ -58,15 +59,27 @@ function Page_iPhone() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <TitleandSlider
-                    classes="pages_slider"
-                    title="iPhone"
-                    image={ImagesiPhone}
-                    imagelength={ImagesiPhone.length - 1}
-                />
+                <div className={cx('slider-pc')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="iPhone"
+                        image={ImagesiPhone}
+                        imagelength={ImagesiPhone.length - 1}
+                    />
+                </div>
+                <div className={cx('slider-mobile')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="iPhone"
+                        image={ImagesiPhoneMobile}
+                        imagelength={ImagesiPhoneMobile.length - 1}
+                    />
+                </div>
             </div>
             <div className={cx('content')}>
-                <div className={cx('list-items-row')}>{_handleButton()}</div>
+                <div className={cx('list-items-row')}>
+                    <div className={cx('list-items-row-mobile')}>{_handleButton()}</div>
+                </div>
                 <div className={cx('list-items-product-row')}>
                     <Product current={current} isHighlight={background} data={ImagesListItemiPhone} />
                 </div>

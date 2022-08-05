@@ -9,6 +9,8 @@ function Button({
     href,
     menu_item_header = false,
     list_item_search = false,
+    list_item_bars_search = false,
+    rightlinebars = false,
     leftline,
     rightline,
     children,
@@ -27,10 +29,13 @@ function Button({
     } else if (href) {
         props.href = href;
         Comp = 'a';
+    } else if (!to) {
+        Comp = 'h4';
     }
     const classes = {
         menu_item_header,
         list_item_search,
+        list_item_bars_search,
     };
     const selecte = useMemo(() => {
         if (isHighLight) {
@@ -52,7 +57,7 @@ function Button({
             >
                 <span className={cx('title')}>{children}</span>
             </Comp>
-            <>{rightline && Comp !== 'button' && <span className={cx('line')}></span>}</>
+            <>{rightline && Comp !== 'button' && <span className={cx('line', { rightlinebars })}></span>}</>
         </>
     );
 }

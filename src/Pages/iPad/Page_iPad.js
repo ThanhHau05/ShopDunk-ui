@@ -2,6 +2,7 @@ import styles from './Page_iPad.module.scss';
 import classNames from 'classnames/bind';
 import TitleandSlider from '~/Components/TitleandSlider';
 import { ImagesiPad } from './Images';
+import { ImagesiPadMobile } from './Images/ImagesMobile';
 import { useState } from 'react';
 import ButtonPages from '~/Components/ButtonPages';
 import Product from '~/Components/Product';
@@ -58,15 +59,27 @@ function Page_iPad() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <TitleandSlider
-                    classes="pages_slider"
-                    title="iPad"
-                    image={ImagesiPad}
-                    imagelength={ImagesiPad.length - 1}
-                />
+                <div className={cx('slider-pc')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="iPad"
+                        image={ImagesiPad}
+                        imagelength={ImagesiPad.length - 1}
+                    />
+                </div>
+                <div className={cx('slider-mobile')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="iPad"
+                        image={ImagesiPadMobile}
+                        imagelength={ImagesiPadMobile.length - 1}
+                    />
+                </div>
             </div>
             <div className={cx('content')}>
-                <div className={cx('list-items-row')}>{_handleButton()}</div>
+                <div className={cx('list-items-row')}>
+                    <div className={cx('list-items-row-mobile')}>{_handleButton()}</div>
+                </div>
                 <div className={cx('list-items-product-row')}>
                     <Product current={current} isHighlight={background} data={ImagesListItemiPad} />
                 </div>

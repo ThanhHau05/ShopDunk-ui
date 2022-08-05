@@ -19,7 +19,7 @@ function ProductHome({ data }) {
                             {item.old_price ? (
                                 <>
                                     <span className={cx('product-old-price')}>{item.old_price}</span>
-                                    &#160;
+                                    <span className={cx('distance')}>&#160;</span>
                                     <span className={cx('product-new-price')}>{item.price}</span>
                                 </>
                             ) : (

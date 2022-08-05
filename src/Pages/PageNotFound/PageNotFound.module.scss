@@ -80,3 +80,39 @@
     border-radius: 8px;
     font-size: 15px;
 }
+
+@media only screen and (max-width: 63.9375em) {
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .text-404 {
+        font-size: 80px;
+    }
+    .btn-back {
+        width: 275px;
+    }
+    .text-content {
+        font-size: 14px;
+    }
+    .elementor-text-content {
+        text-align: center;
+    }
+    .text-oops {
+        font-size: 20px;
+        text-align: center;
+        padding: 0 20px;
+        line-height: 30px;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .btn-back {
+        width: 220px;
+        height: 54px;
+    }
+    .text-content {
+        text-align: center;
+    }
+}

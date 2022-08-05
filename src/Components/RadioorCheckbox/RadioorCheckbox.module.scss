@@ -120,3 +120,35 @@
 .radio-list-title {
     color: #515154;
 }
+
+@media only screen and (max-width: 63.9375em) {
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .container {
+        width: 335px;
+    }
+    .elementor-select {
+        width: 100%;
+    }
+    .list-items-background {
+        height: 90%;
+    }
+    .classSelect {
+        width: 176px;
+    }
+    .classFilterSelect {
+        margin-right: 0;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .elementor-select {
+        width: 226px;
+    }
+    .container {
+        font-size: 12px;
+    }
+}

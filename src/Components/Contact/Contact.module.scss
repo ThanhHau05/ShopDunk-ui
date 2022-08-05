@@ -47,3 +47,68 @@
     font-size: 11px;
     color: #86868b;
 }
+.Contact-content-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 63.9375em) {
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .Contact-content {
+        display: none;
+    }
+    .Contact-content-mobile {
+        display: block;
+    }
+    .lienhe-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .wrapper-mobile {
+        position: fixed;
+        right: 25px;
+        bottom: 18px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .contact-mobile {
+        z-index: 10;
+        width: 165px;
+        height: 182px;
+        background-color: #fff;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        box-shadow: 2px 8px 23px 3px rgb(0 0 0 / 20%);
+    }
+    .content-mobile {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon-mobile {
+        margin-right: 15px;
+        display: flex;
+    }
+    .title-mobile {
+        font-size: 11.5px;
+        color: #1d1d1f;
+    }
+    .text-mobile {
+        font-size: 11px;
+        color: #86868b;
+    }
+
+    .lienhe-btn {
+        height: 60px;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}

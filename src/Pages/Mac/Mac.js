@@ -5,6 +5,7 @@ import Product from '~/Components/Product';
 import { useState } from 'react';
 import ButtonPages from '~/Components/ButtonPages';
 import { ImagesMac } from './Images';
+import { ImagesMacMobile } from './Images/ImagesMobile';
 import ImagesListItemMac from '~/Components/Mac';
 const cx = classNames.bind(styles);
 const LIST_ITEMS = [
@@ -56,15 +57,27 @@ function Mac() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <TitleandSlider
-                    classes="pages_slider"
-                    title="iPad"
-                    image={ImagesMac}
-                    imagelength={ImagesMac.length - 1}
-                />
+                <div className={cx('slider-pc')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="iPad"
+                        image={ImagesMac}
+                        imagelength={ImagesMac.length - 1}
+                    />
+                </div>
+                <div className={cx('slider-mobile')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="iPad"
+                        image={ImagesMacMobile}
+                        imagelength={ImagesMacMobile.length - 1}
+                    />
+                </div>
             </div>
             <div className={cx('content')}>
-                <div className={cx('list-items-row')}>{_handleButton()}</div>
+                <div className={cx('list-items-row')}>
+                    <div className={cx('list-items-row-mobile')}>{_handleButton()}</div>
+                </div>
                 <div className={cx('list-items-product-row')}>
                     <Product current={current} isHighlight={background} data={ImagesListItemMac} />
                 </div>

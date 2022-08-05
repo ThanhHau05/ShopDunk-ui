@@ -5,6 +5,7 @@ import Config from '~/Config';
 import { ImageSlider } from './Slider';
 import { ImageHomeColumn } from './HomeColumn';
 import { ImagePhuKien } from './PhuKien';
+console.log(ImageSlider);
 const Images = {
     Image_Home_Slider: [
         {
@@ -26,14 +27,42 @@ const Images = {
             image: ImageSlider[5],
         },
     ],
+    Image_Home_Slider_mobile: [
+        {
+            image: ImageSlider[6],
+        },
+        {
+            image: ImageSlider[7],
+        },
+        {
+            image: ImageSlider[8],
+        },
+        {
+            image: ImageSlider[9],
+        },
+    ],
     Image_Home_Column: [
         {
-            image: ImageHomeColumn[0],
+            image: ImageHomeColumn[3],
             to: 'but-pencil',
         },
         {
-            image: ImageHomeColumn[1],
+            image: ImageHomeColumn[4],
             to: 'airpods',
+        },
+        {
+            image: ImageHomeColumn[5],
+            to: 'phu-kien',
+        },
+    ],
+    Image_Home_Column_Mobile: [
+        {
+            image: ImageHomeColumn[0],
+            to: 'airpods',
+        },
+        {
+            image: ImageHomeColumn[1],
+            to: 'but-pencil',
         },
         {
             image: ImageHomeColumn[2],

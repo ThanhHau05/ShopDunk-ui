@@ -14,13 +14,37 @@ function Home() {
             </div>
         ));
     };
+    const _handleColumnMobile = () => {
+        return Images.Image_Home_Column_Mobile.map((item, index) => (
+            <div key={index} className={cx('element-column-inner')}>
+                <a href={item.to}>
+                    <img className={cx('element-column-image')} src={item.image} alt="" />
+                </a>
+            </div>
+        ));
+    };
     return (
         <div className={cx('wrapper')}>
-            <Sliders home_slider image={Images.Image_Home_Slider} imagelength={Images.Image_Home_Slider.length - 1} />
+            <div className={cx('slider_line')}></div>
+            <div className={cx('slider_pc')}>
+                <Sliders
+                    home_slider
+                    image={Images.Image_Home_Slider}
+                    imagelength={Images.Image_Home_Slider.length - 1}
+                />
+            </div>
+            <div className={cx('slider_mobile')}>
+                <Sliders
+                    home_slider
+                    image={Images.Image_Home_Slider_mobile}
+                    imagelength={Images.Image_Home_Slider_mobile.length - 1}
+                />
+            </div>
             <div className={cx('container')}>
                 <div className={cx('empty')}></div>
                 <div className={cx('element-column')}>
                     <div className={cx('element-column-row')}>{_handleColumn()}</div>
+                    <div className={cx('element-column-row-mobile')}>{_handleColumnMobile()}</div>
                 </div>
                 <ProductHome data={Images.Image_iPhone} />
                 <ProductHome data={Images.Image_iPad} />

@@ -2,6 +2,7 @@ import styles from './PhuKien.module.scss';
 import classNames from 'classnames/bind';
 import TitleandSlider from '~/Components/TitleandSlider';
 import { ImagesPhuKien } from './Images';
+import { ImagesPhuKienMobile } from './Images/ImagesMobile';
 import ImagesProducts from './Images/PhuKien';
 import ImageProduct from '~/Components/ImageProduct';
 import RadioorCheckbox from '~/Components/RadioorCheckbox/RadioorCheckbox';
@@ -172,15 +173,26 @@ function PhuKien() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <TitleandSlider
-                    classes="pages_slider"
-                    title="Phụ kiện"
-                    image={ImagesPhuKien}
-                    imagelength={ImagesPhuKien.length - 1}
-                />
+                <div className={cx('slider-pc')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="Phụ kiện"
+                        image={ImagesPhuKien}
+                        imagelength={ImagesPhuKien.length - 1}
+                    />
+                </div>
+                <div className={cx('slider-mobile')}>
+                    <TitleandSlider
+                        classes="pages_slider"
+                        title="Phụ kiện"
+                        image={ImagesPhuKienMobile}
+                        imagelength={ImagesPhuKienMobile.length - 1}
+                    />
+                </div>
             </div>
             <div className={cx('content')}>
                 <div className={cx('all-filters')}>
+                    <input className={cx('input')} placeholder="Bạn muốn mua gì?" />
                     <RadioorCheckbox select data={ITEM_SELECT} />
                     <RadioorCheckbox radio isHighLight={background} data={ITEM_RADIO} SanPham={_SanPham} />
                     <RadioorCheckbox

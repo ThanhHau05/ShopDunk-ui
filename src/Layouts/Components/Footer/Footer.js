@@ -109,7 +109,7 @@ const lienhe = {
 };
 
 const introduce = {
-    logo: <img src={LogoWeb} alt="ShopDunk" />,
+    logo: <img src={LogoWeb} className={cx('logo-icon')} alt="ShopDunk" />,
     title: 'Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển chuỗi cửa hàng tiêu chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và dịch vụ của Apple cho người dùng Việt Nam.',
     icon: [
         {
@@ -124,6 +124,10 @@ const introduce = {
             icon: SiZalo,
             to: 'https://zalo.me',
         },
+        {
+            image: <img className={cx('image-mobile')} src={LogoBoCongThuong} alt="" />,
+            to: '*',
+        },
     ],
 };
 function Footer() {
@@ -132,12 +136,14 @@ function Footer() {
             <div className={cx('content-1')}>
                 <div className={cx('content-1-row')}>
                     <Content data={introduce} introduce />
-                    <Content data={sanpham} product />
-                    <Content data={thongtin} information />
-                    <Content data={chinhsach} policy />
-                    <div>
-                        <Content data={diachi} address />
-                        <Content data={lienhe} contact />
+                    <div className={cx('content-1-list-row')}>
+                        <Content data={sanpham} product />
+                        <Content data={thongtin} information />
+                        <Content data={chinhsach} policy />
+                        <div>
+                            <Content data={diachi} address />
+                            <Content data={lienhe} contact />
+                        </div>
                     </div>
                 </div>
             </div>

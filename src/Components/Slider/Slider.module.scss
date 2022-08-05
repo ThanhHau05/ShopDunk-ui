@@ -101,3 +101,46 @@
     border-radius: 50%;
     display: inline-block;
 }
+
+@media only screen and (max-width: 63.9375em) {
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .home_slider {
+        height: 360px;
+    }
+    .prev-icon,
+    .next-icon {
+        width: 26px;
+        height: 26px;
+    }
+    .next-icon {
+        margin-right: 15px;
+    }
+
+    .prev-icon {
+        margin-left: 15px;
+    }
+
+    .pages_slider {
+        width: 100%;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .home_slider {
+        height: 256px;
+    }
+    .next,
+    .prev {
+        top: 40%;
+    }
+
+    .pages_slider {
+        width: 780px;
+        height: 244px;
+        margin-top: 25px;
+    }
+}

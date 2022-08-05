@@ -13,3 +13,39 @@
     border-bottom: 2px solid #0066cc;
     color: #0066cc;
 }
+
+@media only screen and (max-width: 63.9375em) {
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .item-btn {
+        margin: 0px 5px;
+        padding: 6px 18px;
+        width: max-content;
+        background-color: #fff;
+        color: #86868d;
+        border-radius: 8px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .item-btn-background {
+        color: #fff;
+        background-color: #0066cc;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .item-btn {
+        background-color: #fff;
+        width: 80px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin: 0 5px;
+        color: #86868d;
+    }
+}

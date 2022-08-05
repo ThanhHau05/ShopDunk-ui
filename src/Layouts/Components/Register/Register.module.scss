@@ -56,3 +56,40 @@
     padding: 10px 35px;
     margin-left: 5px;
 }
+
+@media only screen and (max-width: 63.9375em) {
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .title {
+        font-size: 18px;
+    }
+    .text {
+        font-size: 13px;
+        text-align: center;
+    }
+    .input {
+        width: 205px;
+        height: 40px;
+    }
+    .register-btn {
+        width: 111px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    .input-register-btn {
+        align-items: center;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .input {
+        width: 363px;
+    }
+    .register-btn {
+        width: 153px;
+    }
+}

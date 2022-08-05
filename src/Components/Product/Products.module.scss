@@ -132,3 +132,122 @@
     display: flex;
     align-items: center;
 }
+
+@media only screen and (max-width: 63.9375em) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .product-description {
+        width: 162px;
+        height: 318px;
+        padding: 0;
+        margin: 0 2px 16px;
+    }
+    .product-label-title-image {
+        height: 100%;
+    }
+    .container {
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+    .content-see-more {
+        width: 335px;
+        height: 125px;
+        margin: 0;
+        padding: 16px 20px;
+    }
+
+    .content-see-more-left {
+        margin-bottom: 8px;
+    }
+    .content-see-more-right {
+        margin-top: 8px;
+    }
+    .see-more-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .see-more-image {
+        width: 94px;
+    }
+
+    .see-more-two-title {
+        font-size: 18px;
+    }
+
+    .see-more-title-text {
+        padding-left: 20px;
+    }
+    .product-old-price-new-price {
+        padding-left: 16px;
+        align-items: flex-end;
+    }
+    .product-price {
+        font-size: 13px;
+        padding-bottom: 0;
+    }
+    .product-label {
+        height: 48px;
+        color: #1d1d1f;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: normal;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        font-size: 15px;
+        padding-left: 16px;
+        padding-right: 10px;
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .product-description {
+        width: 246px;
+        margin-bottom: 16px;
+        margin-right: 20px;
+        padding-left: 20px;
+    }
+    .product-label-title-image {
+        width: 244px;
+    }
+
+    .see-more-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .content-see-more-left,
+    .content-see-more-right {
+        padding: 10px;
+        width: 385px;
+        height: 134px;
+    }
+
+    .content-see-more-right {
+        margin-left: 5px;
+    }
+
+    .content-see-more-left {
+        margin-right: 5px;
+    }
+
+    .see-more-a {
+        width: 204px;
+        height: 114px;
+    }
+
+    .see-more-title-text {
+        height: 100%;
+    }
+
+    .see-more-two-title {
+        font-size: 18px;
+    }
+}
