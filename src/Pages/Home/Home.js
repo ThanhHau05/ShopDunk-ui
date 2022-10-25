@@ -5,7 +5,7 @@ import ProductHome from '~/Components/ProductHome';
 import Images from '~/Images';
 const cx = classNames.bind(styles);
 function Home() {
-    const _handleColumn = () => {
+    const _handleColumndsad = () => {
         return Images.Image_Home_Column.map((item, index) => (
             <div key={index} className={cx('element-column-inner')}>
                 <a href={item.to}>
